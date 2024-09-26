@@ -1,18 +1,18 @@
+import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
+import {StatusBar} from 'react-native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import BottomTabs from './containers/BottomTabs';
+import changeNavigationBarColor from 'react-native-navigation-bar-color';
+const App = () => {
     return (
-        <View style={styles.container}>
-            <Text>Welcome to Thrift Market!</Text>
-        </View>
+        <SafeAreaProvider>
+            <StatusBar barStyle={'dark-content'} />
+            <NavigationContainer onReady={() => changeNavigationBarColor('white')}>
+                <BottomTabs />
+            </NavigationContainer>
+        </SafeAreaProvider>
     );
-}
+};
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-});
+export default App;

@@ -6,9 +6,7 @@ export default function App() {
     return (
     <SafeAreaProvider>
             <StatusBar barStyle={"dark-content"} />
-            <NavigationContainer>
-                <Text> hello world </Text>
-            </NavigationContainer>
+            <Text> hello world </Text>
     </SafeAreaProvider>
     );
 }
